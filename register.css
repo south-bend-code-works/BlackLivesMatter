@@ -1,0 +1,26 @@
+h1{
+  text-align: center;
+}
+
+#contacts {
+  text-align: center;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "Times New Roman";
+  font-size: 40px;
+}
+button{
+  height: 100px;
+  width: 200px;
+  font-size: 30px;
+  font-family: "Times New Roman";
+}
+
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
