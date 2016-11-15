@@ -1,0 +1,19 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: inherit;
+  font-size: 40px;
+}
+
+button{
+  height: 200px;
+  width: 300px;
+  font-size: 24px;
+  color: white;
+  background-color: black;
+  border: 3px solid:white;
+  border-radius: 10px;
+  transition: 1s;
+  margin-left: 100px;
+  /*margin-left: 35%;*/
+}
