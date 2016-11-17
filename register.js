@@ -4,6 +4,7 @@ var user;
 $(document).ready(function() {
     $("#addBtn").click(addEmail);
     $("#doneBtn").click(redirectHome);
+    $("#createAccountBtn").click(createAccount)
 
     // Initialize Firebase
     var config = {
@@ -16,8 +17,8 @@ $(document).ready(function() {
     firebase.initializeApp(config);
 
     user = decodeURI(location.search.split('user=')[1]);
+
     myDataRef = firebase.database().ref(user);
-    console.log("1"+user);
 
     myDataRef.on('child_added', function(snapshot) {
       console.log(snapshot.key);
@@ -29,14 +30,27 @@ $(document).ready(function() {
 
 });
 
+function createAccount() {
+  user =$("#user").val();
+  myDataRef = firebase.database().ref(user);
+  if(addEmail()) {
+
+    alert("Created account!")
+    redirectHome();
+  }
+}
+
 function addEmail(){
   var email=$("#email").val()
   var name=$("#name").val()
+  console.log(email+name)
 
   if(validateEmail(email)){
     myDataRef.push({name:name,email:email});
+    return true;
   } else {
     alert("Please input a valid email address! ("+email+")");
+    return false;
   }
 }
 
